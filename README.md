@@ -18,7 +18,7 @@
 
 ---
 
-## O que deverá ser desenvolvido
+## O que foi desenvolvido
 
 Foi desenvolvida uma aplicação utilizando a arquitetura MSC.
 
