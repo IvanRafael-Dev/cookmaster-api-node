@@ -40,24 +40,37 @@ A autenticação é feita via `JWT`.
 
 ## Utilização
 
-1. Instale as dependências do projeto
+1. Faça o clone do repositório
+```
+- git clone git@github.com:IvanRafael-Dev/cookmaster-api-node.git
+```
 
+2. Instale as dependências do projeto
+```
 - `npm install`
+```
 
-2. O projeto utiliza o MongoDB como banco de dados. Certifique-se de estar com o serviço do Mongo rodando em sua máquina
+3. O projeto utiliza o MongoDB como banco de dados. Certifique-se de estar com o serviço do Mongo rodando em sua máquina
 
+```
 - sudo systemctl start mongod.service
+```
 
-3. Inicie a aplicação 
-
+4. Inicie a aplicação 
+```
 - npm start
+```
 
 ## Testes
 
 Você também pode rodar os testes:
-
+```
 - npm test 
-
+```
+e visualizar sua cobertura atual:
+```
+- npm run dev:test:coverage
+```
 
 # Funcionalidades do projeto
 
