@@ -85,49 +85,35 @@ Você também pode rodar os testes:
   }
   ```
 
-**Além disso, as seguintes verificações serão feitas:**
-
-- **[Será validado que o campo "name" é obrigatório]**
+- **[O campo "name" é obrigatório]**
 
 Se o usuário não tiver o campo "name" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Nome](./public/usuariosemnome.png)
 
-- **[Será validado que o campo "email" é obrigatório]**
+- **[O campo "email" é obrigatório]**
 
 Se o usuário não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Email](./public/usuariosememail.png)
 
-- **[Será validado que não é possível cadastrar usuário com o campo email inválido]**
+- **[Não é possível cadastrar usuário com o campo email inválido]**
 
 Se o usuário tiver o campo email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Email Inválido](./public/campoemailinvalido.png)
 
-- **[Será validado que o campo "senha" é obrigatório]**
+- **O campo "senha" é obrigatório]**
 
 Se o usuário não tiver o campo "senha" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
 ![Usuário sem Senha](./public/usuariosemsenha.png)
 
-- **[Será validado que o campo "email" é único]**
+- **[O campo "email" é único]**
 
 Se o usuário cadastrar o campo "email" com um email que já existe, o resultado retornado deverá ser conforme exibido abaixo, com um status http `409`:
 
 ![Email já Usado](./public/emailjausado.png)
-
-- **[Será validado que é possível cadastrar usuário com sucesso]**
-
-Se o usuário for cadastrado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
-
-![Usuário Cadastrado](./public/usuariocriadocomsucesso.png)
-
-- **[Será validado que é possível ao cadastrar usuário, o valor do campo "role" tenha o valor "user"]**
-
-Se o usuário for criado com sucesso o resultado retornado deverá ser conforme exibido abaixo, com um status http `201`:
-
-![Campo Role](./public/validarrole.png)
 
 ### 2 - Login de usuários
 
