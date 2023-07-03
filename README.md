@@ -135,20 +135,6 @@ e visualizar sua cobertura atual:
 
 - A rota pode ser acessada por usuários logados ou não
 
-**Além disso, as seguintes verificações serão feitas:**
-
-- **[É possível listar todas as receitas sem estar autenticado]**
-
-O resultado retornado para listar receitas com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Receita com Sucesso](./public/listarreceitas.png)
-
-- **[É possível listar todas as receitas estando autenticado]**
-
-O resultado retornado para listar receitas com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Receita com Sucesso](./public/listarreceitas.png)
-
 ### 5 - Visualizar uma receita específica
 
 - rota GET `/recipes/:id`.
