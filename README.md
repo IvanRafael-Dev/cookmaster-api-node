@@ -86,8 +86,6 @@ e visualizar sua cobertura atual:
 
 - O campo Email deve ser único.
 
-- Usuários criados através desse endpoint devem ter seu campo Role com o atributo _user_, ou seja, devem ser usuários comuns, e não admins.
-
 - O body da requisição deve conter o seguinte formato:
 
   ```json
@@ -102,9 +100,9 @@ e visualizar sua cobertura atual:
 
 - rota POST `/login`.
 
-- A rota deve receber os campos Email e Senha e esses campos devem ser validados no banco de dados.
+- A rota recebe os campos Email e Senha e esses campos serão validados no banco de dados.
 
-- Um token `JWT` deve ser gerado e retornado caso haja sucesso no login. No seu payload deve estar presente o id, email e role do usuário.
+- Um token `JWT` é gerado e retornado caso haja sucesso no login. No seu payload estão presentes o id, email e role do usuário.
 
 - O body da requisição deve conter o seguinte formato:
 
@@ -195,9 +193,9 @@ O resultado retornado para excluir uma receita sem autenticação deverá ser co
 
 - rota POST `/recipes/:id/image/`.
 
-- A imagem deve ser lida do campo `image`.
+- A imagem é lida do campo `image`.
 
-- O endpoint deve aceitar requisições no formato `multipart/form-data`.
+- O endpoint aceita requisições no formato `multipart/form-data`.
 
 - A receita só pode ser atualizada caso o usuário esteja logado e o token `JWT` validado.
 
