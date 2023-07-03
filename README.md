@@ -78,7 +78,7 @@ e visualizar sua cobertura atual:
 
 ### 1 - Cadastro de usuários
 
-- A rota deve ser (`/users`).
+- rota POST `/users`.
 
 - No banco um usuário precisa ter os campos Email, Senha, Nome e Role.
 
@@ -98,39 +98,9 @@ e visualizar sua cobertura atual:
   }
   ```
 
-- **[O campo "name" é obrigatório]**
-
-Se o usuário não tiver o campo "name" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Usuário sem Nome](./public/usuariosemnome.png)
-
-- **[O campo "email" é obrigatório]**
-
-Se o usuário não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Usuário sem Email](./public/usuariosememail.png)
-
-- **[Não é possível cadastrar usuário com o campo email inválido]**
-
-Se o usuário tiver o campo email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Email Inválido](./public/campoemailinvalido.png)
-
-- **O campo "senha" é obrigatório]**
-
-Se o usuário não tiver o campo "senha" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Usuário sem Senha](./public/usuariosemsenha.png)
-
-- **[O campo "email" é único]**
-
-Se o usuário cadastrar o campo "email" com um email que já existe, o resultado retornado deverá ser conforme exibido abaixo, com um status http `409`:
-
-![Email já Usado](./public/emailjausado.png)
-
 ### 2 - Login de usuários
 
-- A rota deve ser (`/login`).
+- rota POST `/login`.
 
 - A rota deve receber os campos Email e Senha e esses campos devem ser validados no banco de dados.
 
@@ -145,35 +115,9 @@ Se o usuário cadastrar o campo "email" com um email que já existe, o resultado
   }
   ```
 
-
-- **[O campo "email" é obrigatório]**
-
-Se o login não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Usuário sem Senha](./public/loginsememail.png)
-
-- **[O campo "password" é obrigatório]**
-
-Se o login não tiver o campo "password" o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Usuário sem Senha](./public/loginsemsenha.png)
-
-- **[Não é possível fazer login com um email inválido]**
-
-Se o login tiver o email inválido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Email Inválido](./public/loginemailinvalido.png)
-
-- **[Não é possível fazer login com uma senha inválida]**
-
-Se o login tiver a senha inválida o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Senha Inválida](./public/loginsenhainvalida.png)
-
-
 ### 3 - Cadastro de receitas
 
-- A rota deve ser (`/recipes`).
+- rota POST `/recipes`.
 
 - A receita só pode ser criada caso o usuário esteja logado e o token `JWT` validado.
 
@@ -187,34 +131,9 @@ Se o login tiver a senha inválida o resultado retornado deverá ser conforme ex
   }
   ```
 
-- **[Não é possível cadastrar receita sem o campo "name"]**
-
-Se a receita não tiver o campo "name" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Receita sem nome](./public/receitasemnome.png)
-
-- **[Não é possível cadastrar receita sem o campo "ingredients"]**
-
-Se a receita não tiver o campo "ingredients" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Receita sem ingrediente](./public/receitasemingrediente.png)
-
-- **[Não é possível cadastrar receita sem o campo "preparation"]**
-
-Se a receita não tiver o campo "preparation" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
-
-![Receita sem preparo](./public/receitasempreparo.png)
-
-- **Não é possível cadastrar uma receita com token invalido]**
-
-Se a receita não tiver o token válido o resultado retornado deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Receita com token inválido](./public/tokeninvalidoreq3.png)
-
-
 ### 4 - Listagem de receitas
 
-- A rota deve ser (`/recipes`).
+- rota GET `/recipes`.
 
 - A rota pode ser acessada por usuários logados ou não
 
@@ -234,33 +153,13 @@ O resultado retornado para listar receitas com sucesso deverá ser conforme exib
 
 ### 5 - Visualizar uma receita específica
 
-- A rota deve ser (`/recipes/:id`).
+- rota GET `/recipes/:id`.
 
 - A rota pode ser acessada por usuários logados ou não
 
-
-- **[É possível listar uma receita específica sem estar autenticado]**
-
-O resultado retornado para listar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Listar uma Receita](./public/listarumareceita.png)
-
-- **[É possível listar uma receita específica estando autenticado]**
-
-O resultado retornado para listar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Listar uma Receita](./public/listarumareceita.png)
-
-- **[Não é possível listar uma receita que não existe]**
-
-O resultado retornado para listar uma receita que não existe deverá ser conforme exibido abaixo, com um status http `404`:
-
-![Listar uma Receita inexistente](./public/receitanaoencontrada.png)
-
-
 ### 6 - Edição de uma receita
 
-- A rota deve ser (`/recipes/:id`).
+- rota PUT `/recipes/:id`.
 
 - A receita só pode ser atualizada caso o usuário esteja logado e o token `JWT` validado.
 
@@ -276,34 +175,9 @@ O resultado retornado para listar uma receita que não existe deverá ser confor
   }
   ```
 
-
-- **[Não é possível editar receita sem estar autenticado]**
-
-O resultado retornado para editar receita sem autenticação deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Editar uma Receita sem autenticação](./public/editarsemautenticacao.png)
-
-- **[Não é possível editar receita com token inválido]**
-
-O resultado retornado para editar receita com token inválido deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Editar uma Receita com token inválido](./public/editartokeninvalido.png)
-
-- **[É possível editar receita estando autenticado]**
-
-O resultado retornado para editar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Editar uma Receita](./public/editarcomsucesso.png)
-
-- **É possível editar receita com usuário admin]**
-
-O resultado retornado para editar uma receita com sucesso deverá ser conforme exibido abaixo, com um status http `200`:
-
-![Editar uma Receita](./public/editarcomsucesso.png)
-
 ### 7 - Exclusão de uma receita
 
-- A rota deve ser (`/recipes/:id`).
+- rota DELETE `/recipes/:id`.
 
 - A receita só pode ser excluída caso o usuário esteja logado e o token `JWT` validado.
 
@@ -319,7 +193,7 @@ O resultado retornado para excluir uma receita sem autenticação deverá ser co
 
 ### 8 - Crie um endpoint para a adição de uma imagem a uma receita
 
-- A rota deve ser (`/recipes/:id/image/`).
+- rota POST `/recipes/:id/image/`.
 
 - A imagem deve ser lida do campo `image`.
 
@@ -330,41 +204,14 @@ O resultado retornado para excluir uma receita sem autenticação deverá ser co
 - A receita só pode ser atualizada caso pertença ao usuário logado ou caso o usuário logado seja admin.
 
 
-- **[Não é possível enviar foto sem estar autenticado]**
-
-O resultado retornado para adicionar uma foto na receita com sucesso deverá ser conforme exibido abaixo, com um status http `401`:
-
-![Excluir uma Receita](./public/fotonaoautenticada.png)
-
-
 ### 9 - Acessar a imagem de uma receita
 
-- As imagens devem estar disponíveis através da rota `/images/<id-da-receita>.jpeg` na API.
+- As imagens estão disponíveis através da rota `/images/<id-da-receita>.jpeg` na API.
 
 
-### 10 - Crie testes de integração que cubram no mínimo 30% dos arquivos em `src`, com um mínimo de 50 linhas cobertas
+### 10 - Cadastro de pessoas administradoras
 
-- Os testes de integração devem ser criados na pasta `./src/integration-tests`, essa pasta **não pode ser renomeada ou removida**;
-
-- O arquivo `change.me.test.js` pode ser alterado, renomeado ou removido;
-
-- Os testes devem ser criados usando o instrumental e boas práticas apresentado nos conteúdos de testes do course;
-
-- Para rodar os testes, utilize o comando `npm run dev:test`;
-
-- Para visualizar a cobertura, utilize o comando `npm run dev:test:coverage`;
-
-**Além disso, as seguintes verificações serão feitas:**
-
-- **[Será validado que o teste cobre o valor esperado]**
-
-Nenhum teste pode ser pulado;
-O resultado do percentual total de cobertura deve ser igual ou maior que `30`;
-O resultado do numero total de linhas cobertas deve ser igual ou maior que `50`.
-
-### 11 - Cadastro de pessoas administradoras
-
-- A rota deve ser (`/users/admin`).
+- rota POST `/users/admin`.
 
 - Só será possível adicionar um admin caso esta ação esteja sendo feita por outro admin, portanto, deve ser validado se há um admin logado.
 
